@@ -1,0 +1,33 @@
+.container {
+    margin-top: 5em;
+    color: #ffffff;
+}
+
+.map>iframe {
+    margin: 7em 0 0 0;
+    width: 100%;
+    height: 25em;
+    border: 0;
+}
+
+.card-title {
+    font-size: large;
+}
+
+#contact-form {
+    padding-bottom: 7rem;
+}
+
+.btn-safebank {
+    background-color: #2cdb98;
+}
+html {
+    scroll-behavior: smooth;
+   }
+
+   input:focus {
+    border: 2px solid #2cdb98;
+    }
+    textarea:focus {
+        border: 2px solid #2cdb98;
+    }

@@ -1,0 +1,7 @@
+.navbar {
+    background-color: black;
+}
+.navbar-nav > li{
+    padding-right: 0.2em;
+  }
+

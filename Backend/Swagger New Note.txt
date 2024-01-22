@@ -1,0 +1,85 @@
+Swagger :   used for making REST end points documentation.
+
+Task-1
+===============
+Dependecies:
+--------------------
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+    <version>2.9.2</version>
+</dependency>
+
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger-ui</artifactId>
+    <version>2.9.1</version>
+</dependency>
+
+
+Task-2
+======
+To use swagger in your micro service, need to design a configuration java class  as:
+
+package com.truyum.config;
+
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+@Configuration
+@EnableSwagger2
+public class SwaggerConfig {
+    @Bean
+	public Docket api() {
+		return new Docket(DocumentationType.SWAGGER_2)
+				.select()
+				.apis(RequestHandlerSelectors.any())
+				.paths(PathSelectors.any())
+				.build();
+	}
+}
+
+Task-3
+======
+Add a new property under application.properties file as :
+
+server.servlet.context-path=/menu
+
+** No need to give any root uri for micro service end points
+
+to execute it , use
+  ......./menu/swagger-ui.html
+
+
+=== There is a special for AuthMicroservice to do swagger by adding a new overridden method under SecurityConfigurer as follows:
+
+@Override
+public void configure(WebSecurity web) throws Exception {
+
+web.ignoring().antMatchers("/authapp/login","/h2-console/**","/v2/api-docs","/configuration/ui",
+"/swagger-resources/**","/configuration/security","/swagger-ui.html","/webjars/**","/authapp/swagger");
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

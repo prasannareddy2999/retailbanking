@@ -1,0 +1,45 @@
+@media (min-width: 576px)
+.container {
+    max-width: 540px;
+}
+
+.container {
+    width: 100%;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem);
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5em;
+    color: #ffffff;
+}
+.sec-welcome .box {
+    position: relative;
+    z-index: 2;
+    background: #2cdb98;
+    padding-left: 150px;
+    padding-right: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    bottom: 50px;
+    color: #ffffff;
+}
+.h-100 {
+    height: 100%!important;
+}
+
+
+@media (min-width: 576px)
+.container {
+    max-width: 540px;
+}
+.container {
+    width: 100%;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem);
+    margin-right: auto;
+    margin-left: auto;
+}
+#whyus{
+    margin-top: 90px;
+}
+

@@ -1,0 +1,45 @@
+<!-- form section start -->
+<section class="w3l-workinghny-form">
+    <!-- /form -->
+    <div class="workinghny-form-grid">
+        <div class="wrapper">
+            <div class="workinghny-block-grid" style="margin-top: 3em ; margin-bottom: 3em;">
+                <div class="workinghny-left-img align-end">
+                    <img src="../../assets/2.png" class="img-responsive" alt="img" />
+                </div>
+                <div class="form-right-inf">
+
+                    <div class="login-form-content">
+                        <h2 style="text-align: center; margin-bottom: 2em; color: #2cdb98;"><b>Login Form</b></h2>
+
+                        <div *ngIf="error" class="alert alert-danger mb-3" role="alert">
+                            {{ errorMessage }}
+                        </div>
+
+                        <!-- <form action="#" class="signin-form" method="post"> -->
+                        <form #login="ngForm" (ngSubmit)="onSubmit()">
+                            <div class="one-frm">
+
+                                <label style="color: #ffffff;">User ID</label>
+                                <input [(ngModel)]="credentials.userid" type="text" style="color: #ffffff;"
+                                    name="Username" placeholder="" #userid=ngModel required>
+                            </div>
+
+                            <div class="one-frm">
+                                <label style="color: #ffffff;">Password</label>
+                                <input [(ngModel)]="credentials.password" type="password" style="color: #ffffff;"
+                                    name="Password" placeholder="" required>  
+                            </div>
+
+                            <button [disabled]="!login.valid" style="width:10em;margin-left: 1em; margin-right: 2em;"
+                                class="btn btn-style mt-3">Login </button>
+                            <button style="width:10em;" type="reset" class="btn btn-style mt-3">Reset </button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //form -->
+</section>

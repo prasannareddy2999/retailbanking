@@ -1,0 +1,88 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="../../assets/logo.png" alt="" width="200" height="50" class="d-inline-block align-text-top">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="customer" class="nav-link" routerLink="/customerdashboard" routerLinkActive="active"
+            href="#">Customer Services</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="employee" class="nav-link" routerLink="/employeedashboard" routerLinkActive="active"
+            href="#">Employee Services</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about" routerLinkActive="active" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contactus" routerLinkActive="active" href="#">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="!loggedIn" class="nav-link" routerLink="/login" routerLinkActive="active" href="#">Login</a>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="loggedIn" (click)="logoutUser()" class="nav-link" href="#">Logout</a>
+        </li>
+        <li class="nav-item">
+          <button data-toggle="modal" data-target="#getCharges" *ngIf="customer && loggedIn" class="nav-link"
+            style="background-color: #2cdb98; border:0px; color:black; border-radius: 5px;" (click)="getCharges()">Get
+            Charges</button>
+        </li>
+        <li class="nav-item">
+          <a *ngIf="loggedIn" class="nav-link"
+            style="background-color: #2cdb98; color: black; border-radius: 5px; margin-left: 1em;">{{ user }}</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="modal fade" id="getCharges" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Your service charges</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="refresh()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div *ngIf=success style="color: #ffffff; background-color: black; padding: 2em 2em 2em 2em">
+          <h2 style="color: #2cdb98;">Savings Account</h2>
+          <p>Account Id: {{savingsCharges.accountId}}<br>
+            Message: {{savingsCharges.message}}<br>
+            Balance: {{savingsCharges.balance}}</p>
+          <div *ngIf="sCharge>0" class="text-warning">
+            <br><small>*Deposit {{sCharge}} by this end of the month to avoid deductions in your savings account*</small>
+          </div>
+          <br>
+          <h2 style="color: #2cdb98;">Current Account</h2>
+          <p>Account Id: {{currentCharges.accountId}}<br>
+            Message: {{currentCharges.message}}<br>
+            Balance: {{currentCharges.balance}}</p>
+          <div *ngIf="cCharge>0"  class="text-warning">
+            <small>*Deposit {{cCharge}} by this end of the month to avoid deductions in your current account*</small>
+          </div>
+        </div>
+        <div *ngIf=error [innerHTML]="errorMessage" class="text-danger">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="refresh()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,92 @@
+@media (min-width: 576px)
+.container {
+    max-width: 540px;
+}
+
+.container {
+    width: 100%;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem);
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5em;
+    color: #ffffff;
+}
+.sec-welcome .box {
+    position: relative;
+    z-index: 2;
+    background: #2cdb98;
+    padding-left: 150px;
+    padding-right: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    bottom: 50px;
+    color: #ffffff;
+}
+.h-100 {
+    height: 100%!important;
+}
+
+
+@media (min-width: 576px)
+.container {
+    max-width: 540px;
+}
+.container {
+    width: 100%;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem);
+    margin-right: auto;
+    margin-left: auto;
+}
+#whyus{
+    margin-top: 90px;
+}
+
+.jumbotron {
+    width: 50%;
+    margin: auto;
+    background-color: black;
+}
+
+.input-group-text {
+    border-radius: 4px 0px 0px 4px;
+    background-color: #2cdb98;
+}
+
+input[type="text"], input[type="number"], input[type="date"] {
+    background-color: black;
+    color: #2cdb98;
+}
+
+input:focus {
+    border-color: #2cdb98;
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+::placeholder {
+    color: #2cdb98;
+    opacity: 1;
+}
+
+.myTable {
+    color: #2cdb98;
+    font-size: large;
+}
+
+.myTable:hover{
+    background-color:#E8E8E8;
+    color:black;
+}
+
+#head {
+    background-color: #2cdb98;
+    color: black;
+}
+
+.text-safebank {
+    color: #2cdb98;
+}

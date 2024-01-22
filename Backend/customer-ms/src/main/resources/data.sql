@@ -1,0 +1,1 @@
+insert into Customer (slno,customer_Id, customer_Name, address, date_Of_Birth, pan_No, gender, password) values (0,'SBCU000000', 'cust', 'Delhi,India', '1999-05-24', 'AAAAA1111A', 0, 'cust');

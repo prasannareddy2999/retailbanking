@@ -1,0 +1,2 @@
+insert into Account (account_Id, customer_Id, balance, account_Type) values ('SBACS000000', 'SBCU000000', 0.0, 0);
+insert into Account (account_Id, customer_Id, balance, account_Type) values ('SBACC000000', 'SBCU000000', 0.0, 1);

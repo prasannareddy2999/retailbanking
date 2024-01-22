@@ -1,0 +1,12 @@
+#error{
+	color: red;
+	font-size: 15px;
+}
+.card-title {
+	font-weight: bold;
+	font-size: large;
+}
+
+.text-safebank {
+	color: #2cdb98;
+}
